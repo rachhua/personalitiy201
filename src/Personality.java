@@ -1,33 +1,21 @@
-
 public class Personality {
 	
 	private String myName;
 	
-	/**
-	 * Construct a Personality object with a name
-	 * @param name is used as the identifier for this object
-	 */
-	
 	public Personality(String name) {
-		// TODO: complete constructor
+		myName = name;
 	}
-	
-	/**
-	 * Construct a default Personality, identifier
-	 * will be "they with no name"
-	 */
 	
 	public Personality() {
 		this("they with no name");
 	}
-	
+
 	/**
 	 * Returns this object's identifier
 	 * @return this objects identifying String/label
 	 */
 	public String getName() {
-		// TODO: complete this method
-		return "ola";
+		return myName;
 	}
 	
 	/**
@@ -37,6 +25,13 @@ public class Personality {
 	 */
 	
 	public String getDescription() {
-		return "playful";
+		String description = "";
+		if(myName.length() <= 4) {
+			description = "playful";
+		}
+		if(myName.length() > 4) {
+			description = "argumentative";
+		}
+		return description;
 	}
 }
